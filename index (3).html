@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Mistry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e8e8e8; /* Slightly darker grey to help elements pop */
+            color: #111111;
+            font-family: 'Inter', "Helvetica Neue", Helvetica, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            padding: 4vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Paper Grain Overlay - Increased opacity to make it visible */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/felt.png');
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* More Visible Background Grid */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+            background-size: 5vw 5vw;
+            z-index: -2;
+        }
+
+        /* Large Architectural Initials in Background */
+        .bg-initials {
+            position: fixed;
+            font-size: 80vh;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.04); /* Subtle but definitely there */
+            line-height: 1;
+            z-index: -1;
+            user-select: none;
+            pointer-events: none;
+            letter-spacing: -0.1em;
+        }
+
+        .initial-s { top: -10vh; left: -5vw; }
+        .initial-m { bottom: -10vh; right: -5vw; }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            font-size: clamp(4rem, 12vw, 15rem); 
+            font-weight: 900; 
+            line-height: 0.85; 
+            letter-spacing: -0.05em; 
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        .heading { display: inline; }
+        .links-block { display: inline; }
+
+        .links-block a {
+            color: #111111;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .links-block a:hover {
+            color: #ff3c00; /* High-contrast red/orange hover */
+        }
+
+        .slash {
+            color: #111111;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                line-height: 0.9;
+                letter-spacing: -0.03em;
+            }
+            .bg-initials { font-size: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+    <div class="bg-initials initial-s">S</div>
+    <div class="bg-initials initial-m">M</div>
+
+    <div class="container">
+        <div class="hero-text">
+            <span class="heading">Sahil Mistry is on </span>
+            <div class="links-block">
+                <a href="https://letterboxd.com/NotSahiL" target="_blank">Letterboxd</a><span class="slash">/</span>
+                <a href="https://www.behance.net/sahilmistry9" target="_blank">Behance</a><span class="slash">/</span>
+                <a href="https://www.linkedin.com/in/sahil-mistry9" target="_blank">LinkedIn</a><span class="slash">/</span>
+                <a href="https://www.instagram.com/sxhilm" target="_blank">Instagram</a><span class="slash">/</span>
+                <a href="mailto:mistrysahil990@gmail.com">Email</a><span class="slash">/</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
